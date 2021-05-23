@@ -1,0 +1,15 @@
+- USE ROOT
+sudo su
+
+- ENTER IN THE ENVIRONMENT
+source .env/bin/activate
+
+- PATH
+export PYTHONPATH=$PWD
+
+- START MONGODB
+sudo systemctl start mongod
+
+-RUN UVICORN SERVER
+python app/main.py
+

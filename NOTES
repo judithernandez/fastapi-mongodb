@@ -1,0 +1,29 @@
+DEBUG:
+import pdb; pdb.set_trace()
+
+POST_ADD_USER (full name, email, password) **********done*******
+{
+	- Crear el usuari a la BD
+	- return : "OKEY" | "NOT OKEY IF EXISTS"
+}
+
+POST_LOGIN_USER (email, password) *************done**********
+{
+	- Check if user exists
+	- Generar random auth id
+		- Update auth id
+	- return: auth id | "NOT OKEY IF NOT FOUND"
+}
+
+
+GET_PRIVATE_DATA_RETRIVAL (auth_id)
+{
+	- Check if auth_id exists, and to wich user is related to (call check_auth method in user model)
+	- return:  watever data from DB
+}
+
+ 
+function check_auth(auth_id)
+  SELECT user from users where auth_id= auth_id
+  return user
+end
